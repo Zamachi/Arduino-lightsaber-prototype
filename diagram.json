@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-nano", "id": "nano", "top": 2.67, "left": -170, "attrs": {} },
+    {
+      "type": "wokwi-led-ring",
+      "id": "ring1",
+      "top": 162.47,
+      "left": -6.65,
+      "rotate": 90,
+      "attrs": { "pixels": "32" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -17.17,
+      "left": 37.86,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-mpu6050",
+      "id": "imu1",
+      "top": 7.38,
+      "left": 149.46,
+      "rotate": 180,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -105,
+      "left": -172.24,
+      "rotate": 270,
+      "attrs": { "color": "red", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -151.07,
+      "left": -112.46,
+      "attrs": { "distance": "145" }
+    }
+  ],
+  "connections": [
+    [ "imu1:SCL", "nano:A5", "green", [ "v34.29", "h-179.86" ] ],
+    [ "imu1:SDA", "nano:A4", "green", [ "v39.4", "h-199.68" ] ],
+    [ "bz1:1", "nano:GND.1", "green", [ "v87.53", "h-91.65" ] ],
+    [ "imu1:GND", "nano:GND.1", "black", [ "v88.81", "h-172.13" ] ],
+    [ "bz1:2", "nano:8", "green", [ "v9.44", "h42", "v-114.48", "h-189.92" ] ],
+    [ "ring1:GND", "nano:GND.1", "black", [ "h-19.17", "v-122.55", "h58.9" ] ],
+    [ "ring1:VCC", "nano:5V", "red", [ "h-35.72", "v-150.02", "h60.88" ] ],
+    [ "imu1:VCC", "nano:3.3V", "red", [ "v44.02", "h-281.99" ] ],
+    [ "btn1:1.l", "nano:12", "green", [ "v0" ] ],
+    [ "btn1:2.l", "nano:GND.2", "green", [ "v30.54", "h79.74" ] ],
+    [ "ring1:DIN", "nano:13", "green", [ "h0" ] ],
+    [ "ultrasonic1:VCC", "nano:5V", "red", [ "v42.71", "h-134.63", "v92.84", "h127.34" ] ],
+    [ "ultrasonic1:GND", "nano:GND.2", "black", [ "v52.18", "h-30.96" ] ],
+    [ "ultrasonic1:TRIG", "nano:3", "green", [ "v46.02", "h-31.68" ] ],
+    [ "ultrasonic1:ECHO", "nano:2", "green", [ "v48.99", "h-29.67", "v2.72" ] ]
+  ]
+}
